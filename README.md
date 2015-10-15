@@ -1,24 +1,26 @@
-# mat-less
+# mat-jade
 
-[![npm version](https://badge.fury.io/js/mat-less.svg)](http://badge.fury.io/js/mat-less)
+[![npm version](https://badge.fury.io/js/mat-jade.svg)](http://badge.fury.io/js/mat-jade)
 
 ## Installation
 
 ```sh
-npm install --save-dev mat-less
+npm install --save-dev mat-jade
 ```
 
 ## Usage
 
 ```javascript
 var mat  = require('mat')
-var less = require('mat-less')
+var jade = require('mat-jade')
 
-mat.task('less', function () {
-  mat.url([/\.css/])
+mat.task('jade', function () {
+  mat.url([/\.html/])
     .rewrite([
-      [/\.css/g, '.less']
+      [/\.html/g, '.jade']
     ])
-    .use(less())
+    .use(jade({
+      cdn: 'xxx'
+    }))
 })
 ```
